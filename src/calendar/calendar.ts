@@ -46,4 +46,10 @@ export class CalendarComponent implements OnInit,AfterViewInit,AfterContentCheck
   clientEvents(idOrFilter) {
     return $(this.element.nativeElement).fullCalendar('clientEvents', idOrFilter);
   }
+
+  updateCal() {
+    setTimeout(()=>{
+      $('angular2-fullcalendar').fullCalendar('refetchEvents');
+    }, 100)
+  }
 }
